@@ -1,0 +1,26 @@
+
+.blocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.blocks__block {
+    width: 200px;
+    height: 100px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25090e;
+    color: #166b17;
+    font-size: 20px;
+    box-shadow: 4px 4px 20px rgba(19, 166, 19, 0.75);
+
+}
+.blocks__block span {
+     color: red;
+    font-weight: 500;
+    margin-left: 10px;
+    font-size: 20px;
+}
