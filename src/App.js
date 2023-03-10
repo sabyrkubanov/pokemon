@@ -1,34 +1,23 @@
-import { useEffect, useState } from "react";
-import { fetchPokemons } from "./api/fetchPokemons";
-import PokemonCard from "./components/PokemonCard/PokemonCard";
-import './index.css';
-const App = () =>  {
-    const [ theme, setTheme ] = useState('dark');
-    const [ list, setList ] = useState([]);
+import React from 'react';
+import {Route, Routes} from "react-router-dom";
+import AboutPokemon from "./components/pages/AboutPokemon/AboutPokemon";
+import MainPage from "./components/pages/MainPage/MainPage";
+import NotFound from "./components/pages/NotFound/NotFound";
+import FavoritePokemon from "./components/pages/FavoritePokemon/FavoritePokemon";
 
-
-    const toogleTheme  = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark'
-        setTheme(newTheme)
-    }
-
-
-    useEffect(() => {
-        fetchPokemons(setList)
-    }, [])
-    console.log(list, 'list');
+const App = () => {
     return (
-        <div className={`app ${theme}`}>
-         <h1>POKEMON</h1>
-            <button
-                onClick={toogleTheme}
-                className="button">
-                Change Theme
-            </button>
-            <PokemonCard list={list}/>
+        <div>
+            <Routes>
+                <Route path="/about" element={<AboutPokemon/>}/>
+                <Route path="/" element={<MainPage/>}/>
+                <Route path='*' element={<NotFound/>}/>
+                <Route path='/favorite' element={<FavoritePokemon/>}/>
+
+            </Routes>
 
         </div>
     );
-}
+};
 
 export default App;

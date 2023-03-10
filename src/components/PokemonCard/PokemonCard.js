@@ -1,15 +1,24 @@
-import React from 'react'
-import classes from "./PokemonCard.module.css";
+import React, {useState} from 'react'
+import { useEffect} from "react";
+import axios from "axios";
 
 
-const PokemonCard = ({list}) => {
-    console.log(list)
+const PokemonCard = ({pokemon}) => {
+    const [ image, setImage ] = useState('');
 
+
+    useEffect(() => {
+       axios.get(pokemon.url)
+           .then((data) => {
+               setImage(data.data.sprites.other.dream_world.front_default)
+           })
+
+    },[pokemon.url])
     return (
-        <div className={classes.blocks}>
-            {
-                list.map((item,id) => <p className={classes.blocks__block}>Name : <span>{item.name}</span></p>)
-            }
+        <div className='pokemonCard'>
+            {pokemon.name}
+            <img src={image} alt="pokemon img"/>
+
 
         </div>
     );

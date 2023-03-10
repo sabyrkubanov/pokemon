@@ -1,33 +1,114 @@
 @import './theme/dark.css';
 @import './theme/light.css';
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+.nav-wrapper {
+  width: 100%;
+  background: red;
+}
+.brand-logo {
+  margin-left: 100px;
+}
+.brand-logo > img {
+  width: 130px;
+  height: 60px;
+}
+
+.pokemonList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 .app {
   background-color: var(--background-color);
   color: var(--text-color);
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+.app__h1 {
+  margin: 50px 0 10px 0;
+}
 
 .button {
+  margin: 20px;
   font-weight: 700;
   font-size: 0.9em;
-  color: #fdfdfe;
+  color: var(--text-color);
   padding: 1rem;
   border: 2px solid #166b17;
   border-radius: 90px;
-  background: #166b17;
-  margin-top: 12px;
+  background: var(--background-color);
   box-shadow: 2px 2px 10px rgba(231, 36, 10, 0.75);
 
+}
+
+.pokemonCard {
+  width: 250px;
+  height: 500px;
+  margin: 10px;
+  display: flex;
+  font-family: 'Courier New',Courier,monospace ;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color:  var(--card-background);
+  color:  var(--card-text);
+  font-size: 20px;
+  box-shadow: 4px 4px 20px rgba(19, 166, 19, 0.75);
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+.blocks__block span {
+  color: red;
+  font-weight: 500;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.pokemonCard > img {
+  width: 150px;
+  height: 260px;
+
+}
+.pageChange {
+  font-weight: 700;
+  font-size: 0.9em;
+  color: var(--text-color);
+  padding: 0.5rem 1em;
+  border: 2px solid #166b17;
+  border-radius: 90px;
+  background: var(--background-color);
+  box-shadow: 2px 2px 10px rgba(231, 36, 10, 0.75);
+}
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+.page  {
+  color: red;
+  font-size: 40px;
+}
+.pageCount {
+  color: red;
+  font-size: 40px;
+}
+.paginationAndBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
