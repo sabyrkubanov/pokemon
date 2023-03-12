@@ -1,8 +1,6 @@
 .app.light {
-    --background-color: white;
+    --background-color: rgba(126, 96, 141, 0.44);
     --text-color: black;
-    --card-background:black;
-    --card-text:white
-
-
+    --card-background: black;
+    --card-text: white;
 }

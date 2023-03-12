@@ -1,23 +1,45 @@
-import React from 'react';
-import {Route, Routes} from "react-router-dom";
-import AboutPokemon from "./components/pages/AboutPokemon/AboutPokemon";
-import MainPage from "./components/pages/MainPage/MainPage";
-import NotFound from "./components/pages/NotFound/NotFound";
-import FavoritePokemon from "./components/pages/FavoritePokemon/FavoritePokemon";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import About from "./pages/About/About";
+import { MainPage } from "./pages/MainPage";
+import { PokemonInfo } from "./pages/PokemonInfo";
+import { Link } from "react-router-dom";
+import { fetchPokemonS } from "./api/fetchPokemons";
+import Header from "./components/Header/Header";
+import ImgIcon from '../src/img/sunny-outline.svg'
+const App = () =>  {
+  const [ theme, setTheme ] = useState('dark');
+  const toogleTheme  = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+  }
+useEffect(() => {
+  fetchPokemonS(12, 20)
+}, [])
+  return (
+      <>
+      <Header>
 
-const App = () => {
-    return (
-        <div>
-            <Routes>
-                <Route path="/about" element={<AboutPokemon/>}/>
-                <Route path="/" element={<MainPage/>}/>
-                <Route path='*' element={<NotFound/>}/>
-                <Route path='/favorite' element={<FavoritePokemon/>}/>
+        <button
+            onClick={toogleTheme}
+            className="button" >
+          <img src={ImgIcon} alt=""/>
 
-            </Routes>
+        </button>
 
-        </div>
-    );
-};
+      </Header>
+    <div className={`app ${theme}`}>
+
+
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/about" element={<About />} />
+       <Route path="/pokemon/:id" element={<PokemonInfo /> }  />
+      </Routes>
+    </div>
+      </>
+
+  );
+}
 
 export default App;

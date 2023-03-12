@@ -1,24 +1,21 @@
-import React from 'react';
+import React from 'react'
+import classes from "./Pagination.module.css";
 
-const Pagination = ({changeOffset,page, pageCount }) => {
-    return (
-        <div className='pagination'>
-            <button  className='pageChange' onClick={() => changeOffset('prev')} >
-                prev
-            </button>
-           <div className='page'>
-               {page}  /
-           </div>
+const Pagination = ({ changeOffset, page, pageCount }) => {
+  return (
+    <div className={classes.box}>
+        <button onClick={() => changeOffset('prev')}>
+           Prev
+        </button>
+        {page}
+        /
+        {pageCount}
+        <button onClick={() => changeOffset('next')}>
+        Next
+        </button>
 
-            <div className="pageCount">
-                {pageCount}
+    </div>
+  )
+}
 
-            </div>
-            <button className='pageChange' onClick={() => changeOffset('next')}>
-                next
-            </button>
-        </div>
-    );
-};
-
-export default Pagination;
+export default Pagination
