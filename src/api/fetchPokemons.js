@@ -1,5 +1,6 @@
 import axios from "axios"
 import { sortItem } from "../common/helpers"
+import {useEffect} from "react";
 const baseURL = 'https://pokeapi.co/api/v2/'
 
 export const fetchPokemons = async(limit, offset) => {

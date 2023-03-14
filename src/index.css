@@ -125,3 +125,21 @@ header img {
     justify-content: center;
     flex-direction: column;
 }
+@media (max-width: 568px) {
+    .nav-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav_link {
+        max-width: 100%;
+        width: 60%;
+        margin: 10px 0;
+    }
+    .button {
+        margin-left: 10px;
+    }
+    .brand-logo > img {
+        margin-left: 52px;
+    }
+
+}

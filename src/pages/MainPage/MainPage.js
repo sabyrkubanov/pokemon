@@ -39,7 +39,7 @@ const handleChangePage = (type) => {
       <div className="container">
       <div className="pokemonList">
     {pokemonList.map(pokemon => <PokemonCard
-  pokemon={pokemon} />)}
+     pokemon={pokemon} />)}
         </div> 
       </div>
 

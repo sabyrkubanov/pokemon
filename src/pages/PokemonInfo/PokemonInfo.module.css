@@ -65,6 +65,13 @@ h4 {
 h5 {
     font-size: 20px;
     text-transform: uppercase;
-    padding-top:5px ;
+    padding-top:10px ;
     color: #881522;
+}
+@media (max-width: 568px) {
+    .pokeinfo {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
